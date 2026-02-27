@@ -1,8 +1,8 @@
-# 📌 Mylog — Your Personal Custom Portal
+# 📌 Mylog — Your 3-Pillar Optimization Dashboard
 
-> **"Log in, and your world unfolds."**
+> **"Where your wallet opens, time is spent, and wealth grows."**
 >
-> Mylog is a **personal portal site** that breaks away from the identical screens of traditional search engines, delivering an optimized dashboard tailored **exclusively for you**.
+> Mylog isn't a portal for everything. It's a **hyper-personalized dashboard** tracking only the three core interests of modern professionals: **Shopping, Hobbies, and Assets**.
 
 ---
 
@@ -11,131 +11,145 @@
 | Category | Details |
 |------|------|
 | **Project Name** | Mylog |
-| **One-Line Intro** | A personalized portal to view your interests, hobbies, routines, and wishlists at a glance. |
+| **One-Line Intro** | A personalized dashboard to track your shopping wishlist, hobby activities, and asset flow at a glance. |
 | **Platform** | Web (Responsive, Mobile-friendly) |
-| **Target Audience** | Individuals in their 20s–40s focused on self-management. |
-| **Core Values** | Personalization · At-a-Glance Dashboard · Productivity Boost |
+| **Target Audience** | 20s-30s professionals focused on mastering their money and time. |
+| **Core Values** | Selection & Focus · At-a-Glance View · Cost-Free Efficiency |
 
 ---
 
 ## 2. Core Concept
 
 ### 🎯 Problem Statement
-- Traditional portals (e.g., Google, Naver) show **the same information to everyone**.
-- Your interests, hobbies, routines, and wishlists are scattered across multiple apps and services.
+- Traditional portals show **the same information to everyone**.
+- Your interests, hobbies, and wishlists are scattered across multiple apps.
 - Checking multiple apps every morning is **inefficient**.
 
 ### 💡 The Solution
 - A portal where your **personalized dashboard** appears the moment you log in.
-- Freely arrange widgets for interests, hobbies, routines, and wishlists.
-- A one-stop service to **start your day** from a single screen.
+- Freely arrange shopping, hobby, and asset widgets on a single screen.
+- A one-stop service to **start your day** from one screen.
 
 ---
 
 ## 3. Key Features
 
-### 3.1 🔐 Login & Signup
-- **Social Login:** Quick login via Google, Kakao, Naver.
-- **Profile Setup:** Initial setup for nicknames, profile pictures, and interest tags.
-- **Onboarding:** A guide to selecting interests and hobbies upon first login.
+### 3.1 🏠 Main Dashboard (Home)
+> Two-column layout: Content feed (left) + Asset sidebar (right).
 
-### 3.2 🏠 Main Dashboard (Home)
-> The core of the portal, visible immediately after login.
-
-**Widget System:** Drag and drop widgets to arrange them exactly how you want.
-- ☀️ **Morning Routine:** Wake up, exercise, meditate checklists.
-- 📰 **News Feed:** Curated news based on your interests.
-- 🎮 **Hobby Tracker:** Log hobby activities and progress.
-- 🛒 **Wishlist:** Items you want, including price tracking.
-- 📅 **Today's Schedule:** Calendar integration.
-- 🌤️ **Weather:** Location-based weather updates.
-- ✅ **To-Do List:** Manage daily tasks.
-- 📊 **Goal Progress:** Weekly/Monthly goal tracking.
-- 🔖 **Bookmarks:** Quick links to favorite sites.
-- 💰 **Budget Summary:** Monthly income/expense overview.
-- 🏠 **Real Estate:** Property prices, listing alerts, subscription schedules.
-- 📈 **Stocks & Investments:** Portfolio tracking, stock prices, economic news.
-- 🚗 **Automotive:** Vehicle prices, new releases, maintenance costs.
-- 💪 **Health & Fitness:** Workout logs, step count, diet notes.
-- ✈️ **Travel & Dining:** Dream destinations, restaurant lists, flight price tracking.
-- 🏷️ **Shopping Deals:** Lowest price alerts, time-deal highlights.
-
-### 3.3 🔍 Interest Hub
-- **Interest Categories:** Manage categories like Tech, Fashion, Fitness, Real Estate, Stocks, etc.
-- **Tailored Content:** Articles, videos, and community posts curated by interest.
-- **Trend Alerts:** Notifications on changes in your favorite fields.
-
-### 3.4 🏃 Routine Manager
-- **Morning/Night Routines:** Setup and check off daily routines.
-- **Custom Routines:** User-defined routines (e.g., workouts, study).
-- **Routine Stats:** Weekly/Monthly completion reports.
-
-### 3.5 🎯 Wishlist & Goals
-- **Wishlist Management:** Keep track of things you want to buy, do, or places you want to go.
-- **Price Tracking:** Alerts for lowest prices on wishlist items.
-- **Goal Setting:** Track short-term and long-term goals.
-
-### 3.6 🏠 Real Estate & Wealth
-- **Local Property Prices:** Track real estate trends in selected areas.
-- **Property Alerts:** Real-time notifications for listings meeting your criteria.
-- **Subscription Calendar:** Automatic alerts for real estate subscription dates.
-- **Wealth Dashboard:** Integrated view of real estate + stocks + savings.
-
-### 3.7 📊 My Reports
-- **Weekly/Monthly Reports:** Summaries of routine completion and interest activity.
-- **Growth Graphs:** Visualizing goal progress over time.
-- **Asset Reports:** Monthly summaries of asset changes.
-
----
-
-## 4. Design Direction
-
-### 🎨 Design Principles
-- **Minimal & Clean:** Reduce information overload; show only what matters.
-- **Dark Mode Default:** Sleek dark theme by default, with light mode available.
-- **Card-Based UI:** Widgets designed as intuitive cards.
-- **Smooth Animations:** Micro-animations for transitions and interactions.
-
----
-
-## 5. Technology Stack (Planned)
-
-| Category | Technology |
+#### Left — Content Feed
+| Feed Section | Description |
 |------|------|
-| **Frontend** | React (Vite) + TypeScript |
-| **Styling** | Vanilla CSS (Custom Design System) |
-| **State Management** | Zustand or Context API |
-| **Backend / Auth** | Firebase or Supabase |
-| **Database** | Firestore or Supabase PostgreSQL |
-| **Hosting** | Vercel or Netlify |
-| **Widget System** | `react-grid-layout` (Drag & Drop) |
+| 🛒 **Real-time Hot Deals** | Filtered deal aggregation from community boards (RSS) |
+| 🎮 **Geek News Feed** | IT/Tech, gaming, fitness news by interest tab |
+| 💰 **Asset & Investment Monitor** | Real estate, stocks, crypto-related news |
+
+#### Right — Asset Sidebar (10 Widgets)
+| # | Widget | Description | Data Source |
+|---|------|------|------|
+| ① | 📊 **Asset Summary** | Net worth + asset allocation bar chart | User input (calculated) |
+| ② | 🏠 **My Property** | Apartment value, appreciation vs purchase price | Korea MOLIT API (free) |
+| ③ | 📈 **My Stocks** | Holdings, current price, returns, total value | User input + free quote API |
+| ④ | 💵 **My Savings** | Bank deposits/savings, maturity, expected interest | User input |
+| ⑤ | 🪙 **My Crypto** | BTC, ETH holdings and current value | Upbit Open API (free) |
+| ⑥ | 🚗 **My Car** | Vehicle model, used car value estimate | User input |
+| ⑦ | 💳 **My Loans** | Mortgage/credit loan balance, next payment, monthly total | User input |
+| ⑧ | 🏦 **My Pension** | National pension estimate, retirement fund balance | User input |
+| ⑨ | 📅 **Subscription Calendar** | Upcoming apartment subscription D-days | Korea Real Estate Board API (free) |
+| ⑩ | 💱 **Exchange Rates** | KRW/USD, KRW/JPY, KRW/EUR compact display | Export-Import Bank of Korea API (free) |
+
+### 3.2 🛒 Shopping Deep Dive
+- **Wishlist Gallery** — Track items (pending / purchased)
+- **Price Alert** — Notifications only when items hit target discount
+- **Hot Deal Aggregator** — Filtered view by category
+
+### 3.3 🎮 Hobbies Deep Dive
+- **Hobby Archive** — Games played, books read, with ratings
+- **Activity Tracker** — Weekly/Monthly time visualization
+- **Custom RSS Viewer** — Consume hobby content without leaving the app
+
+### 3.4 💰 Assets Deep Dive
+- **Asset Flow Report** — Monthly cash flow line charts
+- **Real Estate Monitor** — Latest transaction prices for tracked apartments
+- **Macro Indicator Board** — Exchange rates and interest rate snapshots
 
 ---
 
-## 6. Development Roadmap
+## 4. Tech Stack
 
-### 📍 Phase 1 — MVP (Minimum Viable Product)
-- Project setup (Vite + React + TypeScript)
-- Social Login (Google)
-- Main dashboard layout with 3 basic widgets (To-Do, Weather, Bookmarks)
-- Dark mode toggle
+| Category | Technology | Status |
+|------|------|------|
+| **Frontend** | React (Vite) + TypeScript | ✅ Done |
+| **Styling** | Vanilla CSS (Custom Design System) | ✅ Done |
+| **Routing** | React Router DOM | ✅ Done |
+| **State Management** | Zustand or Context API | 🔜 Planned |
+| **Backend / Auth** | Firebase or Supabase | 🔜 Planned |
+| **Database** | Firestore or Supabase PostgreSQL | 🔜 Planned |
+| **Hosting** | Vercel or Netlify | 🔜 Planned |
+| **Widget System** | `react-grid-layout` (Drag & Drop) | 🔜 Planned |
+
+---
+
+## 5. Development Roadmap
+
+### 📍 Phase 1 — MVP UI Shell ✅ Complete
+- [x] Project setup (Vite + React + TypeScript)
+- [x] Design system (CSS variables, dark mode tokens, component styles)
+- [x] Main dashboard layout (2-column: feed + asset sidebar)
+- [x] React Router (Home / Shopping / Hobbies / Assets / Settings)
+- [x] Header + Navigation components
+- [x] 10 asset sidebar widgets (with dummy data)
+- [x] 3 content feed sections (deals, hobby news, asset monitoring)
+- [x] 4 sub-page placeholders
 
 ### 📍 Phase 2 — Core Features
-- Drag & Drop widget placement
-- Morning/Night Routine Manager
-- Wishlist & Interest Feed
-- Real Estate & Stock Portfolio Widgets
+- [ ] Social Login (Google)
+- [ ] User asset data CRUD
+- [ ] Drag & Drop widget placement
+- [ ] Wishlist price tracking
+- [ ] Public API integrations (real estate, exchange rates, subscriptions)
 
-### 📍 Phase 3 — Advanced Features
-- Content curation based on interests
-- Weekly/Monthly My Reports & Growth Graphs
-- Budget Summary & Integrated Wealth Dashboard
-- Widget Market
+### 📍 Phase 3 — Advanced
+- [ ] RSS-based content curation
+- [ ] Weekly/Monthly reports
+- [ ] Asset flow charts
+- [ ] Hobby activity tracker (grass-planting)
+- [ ] Widget market
 
 ### 📍 Phase 4 — Expansion
-- PWA (Progressive Web App) support & Mobile Optimization
-- Push Notifications
-- Expanded API integrations (Calendar, Finance, etc.)
+- [ ] PWA support & mobile optimization
+- [ ] Push notifications
+- [ ] Expanded API integrations
+
+---
+
+## 6. Project Structure
+
+```
+mylog-app/
+├── src/
+│   ├── components/
+│   │   ├── layout/          # Header, Nav
+│   │   └── widgets/         # 10 asset widgets
+│   ├── pages/               # Home, Shopping, Hobbies, Assets, Settings
+│   ├── styles/              # global.css, components.css
+│   ├── App.tsx              # Root + React Router
+│   └── main.tsx             # Entry point
+├── public/
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## 7. Getting Started
+
+```bash
+cd mylog-app
+npm install
+npm run dev
+# Opens at http://localhost:5173
+```
 
 ---
 

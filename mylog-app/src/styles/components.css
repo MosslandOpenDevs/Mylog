@@ -1,0 +1,648 @@
+/* =============================================================
+   Mylog — 컴포넌트 공통 스타일
+   정렬 기준과 간격을 통일하여 깔끔한 UI를 구현
+   ============================================================= */
+
+/* ─── 헤더 ─── */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--header-height);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-xl);
+}
+
+.header-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+/* 로고 */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-weight: 800;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--color-accent);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 검색 */
+.search-bar {
+    flex: 1;
+    max-width: 480px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    height: 36px;
+    padding: 0 40px 0 var(--spacing-lg);
+    background: var(--bg-highlight);
+    border: 1px solid var(--border-card);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--text-primary);
+    transition: border-color 0.2s;
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-bar input:focus {
+    border-color: var(--color-accent);
+}
+
+.search-btn {
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* 유틸 버튼 */
+.header-utils {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.btn-icon:hover {
+    background: var(--bg-highlight);
+}
+
+/* ─── 네비게이션 ─── */
+.nav {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 90;
+    height: var(--nav-height);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-xl);
+}
+
+.nav-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.nav-link {
+    padding: 6px var(--spacing-lg);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: var(--bg-highlight);
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+    font-weight: 600;
+    background: var(--bg-highlight);
+}
+
+/* ─── 메인 레이아웃 ─── */
+.main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+/* ─── 좌측 피드 영역 ─── */
+.feed-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+/* ─── 우측 사이드바 ─── */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* ─── 공통 카드 (사이드바 위젯용) ─── */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg) var(--spacing-xl);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+}
+
+.card-header h3 {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-header .more-btn {
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.card-header .more-btn:hover {
+    color: var(--text-primary);
+}
+
+/* ─── 위젯 내부 아이템 (통일된 스타일) ─── */
+
+/* 위젯 아이템을 감싸는 리스트 */
+.widget-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 한 줄짜리 좌우 정렬 행 (종목명 - 가격 등) */
+.widget-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-highlight);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    min-height: 44px;
+}
+
+/* 위젯 행 내 좌측 정보 */
+.widget-row .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+/* 위젯 행 내 우측 정보 (숫자 데이터 우측 정렬) */
+.widget-row .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    flex-shrink: 0;
+}
+
+.widget-row .label {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.widget-row .sub-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.widget-row .value {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: right;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+}
+
+.widget-row .change {
+    font-size: 11px;
+    text-align: right;
+    line-height: 1.3;
+}
+
+.change.up {
+    color: var(--color-up);
+}
+
+.change.down {
+    color: var(--color-down);
+}
+
+.change.positive {
+    color: var(--color-positive);
+}
+
+/* 블록형 위젯 행 (내 부동산, 내 차 등 — 세로 나열됨) */
+.widget-block {
+    background: var(--bg-highlight);
+    padding: 14px;
+    border-radius: var(--radius-md);
+}
+
+.widget-block .block-title {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.widget-block .block-name {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.widget-block .block-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 8px;
+}
+
+.widget-block .block-price {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.widget-block .block-note {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* 위젯 합산 행 (총 평가금액, 월 상환 합계 등) */
+.widget-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4px 0;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 4px;
+}
+
+.widget-total .label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.widget-total .value {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ─── 피드 섹션 카드 ─── */
+.feed-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+}
+
+.feed-card .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feed-card .section-title h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.feed-tabs {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.feed-tab {
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border-radius: 12px;
+    transition: all 0.2s;
+    line-height: 1.3;
+}
+
+.feed-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-highlight);
+}
+
+.feed-tab.active {
+    color: var(--text-primary);
+    background: var(--bg-highlight);
+    font-weight: 600;
+}
+
+/* 피드 아이템 그리드 */
+.feed-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feed-item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.feed-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+    background: var(--bg-highlight);
+}
+
+.feed-item p {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-xs);
+}
+
+.feed-item .source {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.feed-item .price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-up);
+}
+
+/* 피드 리스트 */
+.feed-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.feed-list-item {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    line-height: 1.5;
+}
+
+.feed-list-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.feed-list-item:first-child {
+    padding-top: 0;
+}
+
+/* ─── 로그인 카드 ─── */
+.login-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.login-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-login-btn);
+    color: var(--color-login-btn-text);
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: var(--radius-md);
+    transition: opacity 0.2s;
+    line-height: 1.3;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+.login-links {
+    margin-top: var(--spacing-md);
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    line-height: 1;
+}
+
+.login-links span {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.login-links span:hover {
+    color: var(--text-primary);
+}
+
+.login-links .divider {
+    color: var(--border-card);
+    user-select: none;
+}
+
+/* ─── 총 자산 요약 ─── */
+.asset-summary-amount {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.asset-summary-amount .asset-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.asset-summary-amount .asset-value {
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: 4px;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+}
+
+.asset-summary-amount .asset-change {
+    font-size: 13px;
+    color: var(--color-up);
+    margin-top: 3px;
+    line-height: 1.3;
+}
+
+.asset-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.asset-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* ─── 환율 (컴팩트) ─── */
+.exchange-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-lg);
+    padding: 12px var(--spacing-xl);
+}
+
+.exchange-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.exchange-row .ex-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.exchange-row .ex-value {
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.exchange-row .ex-change {
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+/* ─── 서브 페이지 플레이스홀더 ─── */
+.page-placeholder {
+    text-align: center;
+    padding: 80px var(--spacing-xl);
+}
+
+.page-placeholder .page-emoji {
+    font-size: 48px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.page-placeholder h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-placeholder p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* ─── 반응형 ─── */
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-inner {
+        gap: var(--spacing-sm);
+    }
+
+    .search-bar {
+        max-width: none;
+    }
+
+    .feed-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-inner {
+        overflow-x: auto;
+    }
+}
